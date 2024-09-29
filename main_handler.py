@@ -14,6 +14,11 @@ async def start_handler(message: Message):
 
 @router.message()
 async def get_name_handler(message: Message):
-    await message.answer(
-        f"Рад знакомству, {message.text}! Курс доллара сегодня {get_usd_exchange_rate()}р"
-    )
+    if get_usd_exchange_rate != None:
+        await message.answer(
+            f"Рад знакомству, {message.text}! Курс доллара сегодня {get_usd_exchange_rate()}р"
+        )
+    else:
+        await message.answer(
+            f"Рад знакомству, {message.text}! Курс доллара на сегодня неизвестен"
+        )

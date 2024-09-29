@@ -10,5 +10,4 @@ def get_usd_exchange_rate():
         usd_rate = data["Valute"]["USD"]["Value"]
         return usd_rate
     else:
-        print("Не удалось получить данные.")
         return None
